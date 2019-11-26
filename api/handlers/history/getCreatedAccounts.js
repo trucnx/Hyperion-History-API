@@ -12,6 +12,8 @@ async function getCreatedAccounts(fastify, request) {
     }
     const results = await elastic['search']({
         "index": process.env.CHAIN + '-action-*',
+        "from": request.query.skip ,
+        "size": request.query.limit ,
         "body": {
             "query": {
                 "bool": {

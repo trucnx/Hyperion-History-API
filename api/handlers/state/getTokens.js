@@ -32,6 +32,8 @@ async function getTokens(fastify, request) {
 
     const results = await elastic.search({
         "index": process.env.CHAIN + '-action-*',
+        "from": request.query.skip ,
+        "size": request.query.limit ,
         "body": {
             size: 0,
             query: {
