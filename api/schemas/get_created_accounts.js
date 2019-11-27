@@ -37,6 +37,16 @@ exports.GET = {
                             'trx_id': {type:'string'}
                         }
                     }
+                },
+                "skip": {
+                    description: 'skip [n] actions (pagination)',
+                    type: 'integer',
+                    minimum: 0
+                },
+                "limit": {
+                    description: 'limit of [n] actions per page',
+                    type: 'integer',
+                    minimum: 1
                 }
             }
         }
