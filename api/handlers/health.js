@@ -4,7 +4,7 @@ const {getLastIndexedBlock} = require("../../helpers/functions");
 const {ConnectionManager} = require('../../connections/manager');
 const manager = new ConnectionManager();
 
-const ecosystem = require('../../ecosystem.config');
+const ecosystem = require('../../config/ecosystem.config');
 
 function checkFeat(name) {
     return currentENV[name] === 'true';
