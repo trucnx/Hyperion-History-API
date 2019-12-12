@@ -997,6 +997,9 @@ async function run() {
     }, 25000);
 
     cachedMap = JSON.parse(await getAsync(process.env.CHAIN + ":" + 'abi_cache'));
+    if (!cachedMap) {
+        cachedMap = {};
+    }
     rpc = manager.nodeosJsonRPC;
     const chain_data = await rpc.get_info();
     chainID = chain_data.chain_id;
